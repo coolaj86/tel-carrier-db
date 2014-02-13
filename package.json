@@ -1,0 +1,15 @@
+{
+  "name": "fonefinder-downloader",
+  "version": "1.0.0",
+  "description": "Downloads the nxx database from fonefinder.net",
+  "main": "download.js",
+  "scripts": {
+    "test": "node download.js"
+  },
+  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
+  "license": "Apache2",
+  "dependencies": {
+    "foreachasync": "~3.0.0",
+    "request": "~2.33.0"
+  }
+}
