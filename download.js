@@ -16,6 +16,10 @@
     , sts = { map: {}, arr: [] }
     , comments = { map: {}, arr: [] }
     , types = { map: {}, arr: [] }
+    , s = ' '
+    , s2 = '  '
+    //, s = ''
+    //, s2 = ''
     ;
 
   function pad(str) {
@@ -71,7 +75,7 @@
   }).then(function () {
     var ws
       , spacer = '  '
-      , stuff = []
+      , mapData = {}
       ;
 
     nxxs.forEach(function (nxx, i) {
@@ -90,40 +94,59 @@
 
     console.log(bigData.length, 'lines to write...');
 
-    ws.write('{ list: [\n');
-    forEachAsync(bigData, function (next, d, i) {
-      d[0] = parseInt(d[0], 10); // area code
-      d[1] = parseInt(d[1], 10); // prefix
-      d[2] = addThing(d[2], cities); // city name
-      d[3] = addThing(d[3], states); // state name
-      d[4] = addThing(d[4], sts); // state abbrev
-      d[5] = addThing(d[5], comments); // teclo registered
-      d[6] = addThing(d[6], types); // telco type
-      stuff.push(spacer + JSON.stringify(d) + '\n');
-      if (stuff.length > 1000) {
-        ws.write(stuff.join(''), function () {
-          next();
-        });
-        stuff = [];
-        console.log('wrote 1000...');
-        return;
+    bigData.forEach(function (bigData) {
+      var area = bigData[0]
+        ;
+
+      if (!mapData[area]) {
+        mapData[area] = [];
       }
+
+      mapData[area].push(bigData);
+      bigData.shift();
+    });
+
+    ws.write('{' + s + '"list":' + s + '{\n');
+    forEachAsync(Object.keys(mapData), function (next, areaCode, i) {
+      var list = mapData[areaCode]
+        , strs = []
+        , sp = '    '
+        ;
+
+      ws.write(spacer + '"' + areaCode + '":' + s + '[\n');
+      list.forEach(function (d, j) {
+        d[0] = parseInt(d[0], 10); // prefix
+        d[1] = addThing(d[1], cities); // city name
+        d[2] = addThing(d[2], states); // state name
+        d[3] = addThing(d[3], sts); // state abbrev
+        d[4] = addThing(d[4], comments); // teclo registered
+        d[5] = addThing(d[5], types); // telco type
+
+        strs.push(sp + JSON.stringify(d) + '\n');
+
+        if (0 === j) {
+          sp = s2 + ',' + s;
+        }
+      });
+      ws.write(strs.join('') + s2 + ']\n', function () {
+        console.log('wrote ' + strs.length + '...');
+        next();
+      });
+
       if (0 === i) {
-        spacer = ', ';
+        spacer = ',' + s;
       }
-      next();
     }).then(function () {
       ws.on('close', function () {
         console.log('wrote data.json');
       });
 
-
-      ws.write(stuff.join('') + ']\n\n');
-      ws.write(', types: ' + JSON.stringify(types.arr) + '\n');
-      ws.write(', states: ' + JSON.stringify(states.arr) + '\n');
-      ws.write(', sts: ' + JSON.stringify(sts.arr) + '\n');
-      ws.write(', cities: ' + JSON.stringify(cities.arr, null, '  ') + '\n');
-      ws.write(', comments: ' + JSON.stringify(comments.arr, null, '  ') + '\n');
+      ws.write(s2 + '}\n');
+      ws.write(',' + s + '"types":' + s + JSON.stringify(types.arr) + '\n');
+      ws.write(',' + s + '"states":' + s + JSON.stringify(states.arr) + '\n');
+      ws.write(',' + s + '"sts":' + s + JSON.stringify(sts.arr) + '\n');
+      ws.write(',' + s + '"cities":' + s + JSON.stringify(cities.arr, null, s2) + '\n');
+      ws.write(',' + s + '"comments":' + s + JSON.stringify(comments.arr, null, s2) + '\n');
       ws.write('}\n', function () {
         ws.close();
       });
