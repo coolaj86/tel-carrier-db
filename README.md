@@ -1,5 +1,48 @@
-nxx-lookup
-==========
+# tel-carrier-db
+
+## Usage
+
+```bash
+npm install --save tel-carrier-db
+```
+
+```javascript
+(function () {
+  'use strict';
+
+  var telDb = require('tel-carrier-db')
+    , info
+    ;
+
+                    // country, area code, prefix, exchange/subscriber/line
+  info = telDb.lookup('1', '801', '360', '5555');
+  if (info) {
+    console.log(info);
+  } else {
+    console.log('Not found');
+  }
+
+  /*
+  { number: '+18013605555'
+  , city: 'PROVO'
+  , state: 'Utah'
+  , st: 'UT'
+  , company: 'CELLCO PARTNERSHIP DBA VERIZON WIRELESS - UT'
+  , type: 'WIRELESS PROV'
+  , carrier: 'verizon'
+  , link: 'http://www.verizonwireless.com'
+  , wireless: true
+  }
+  */
+}());
+```
+
+Note that the `country` parameter is ignored.
+Only US numbers are supported at this time.
+
+Also note that `carrier`, `link`, and `wireless` may be empty strings or undefined.
+
+## Update the Database
 
 This tool is used to scrape the nanp nxx database used by
 [`tel-carrier`](https://github.com/coolaj86/node-tel-carrier)

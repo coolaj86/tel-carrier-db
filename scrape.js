@@ -1,8 +1,5 @@
 'use strict';
 
-var fs = require('fs')
-  ;
-
 function scrape(html) {
   var arr = []
     , rows
@@ -22,14 +19,17 @@ function scrape(html) {
   //console.log(rows.join('\n\n'));
   rows.forEach(function (row) {
     var cols = row.split(/<TD>/ig)
+      , linkHrefRe = /<A.*?HREF='([^']*)'.*/
       , linkTitleRe = /<A[^>]*>([^<]+)(<\/A>)?/
       , area
       , prefix
       , city
       , state
       , st
-      , comment
+      , company
       , type
+      , carrier
+      , carrierLink
       ;
 
     cols.shift();
@@ -40,39 +40,25 @@ function scrape(html) {
     city = cols[2].replace(linkTitleRe, '$1');
     st = cols[2].replace(/.*state=(\w+).*/, '$1');
     state = cols[3].replace(linkTitleRe, '$1');
-    comment = cols[4].replace(linkTitleRe, '$1');
-      ////.replace(new RegExp(' - ' + st + '$', 'i'), '');
-      ////.replace(/\s*-\s*\w+(\s*\w+)?$\s*/i, '')
-      //.replace(/\s*-\s*\w{2}$\s*/i, '')
-      //.replace(/.* DBA /, '')
-      //.replace(/[,.\s]+(CO|CORP|LLC|INC|L\.P\.|LP|LTD)([,.\s]+|$)\s*/i, '')
-      //;
+    company = cols[4].replace(linkTitleRe, '$1');
+    carrierLink = cols[4].replace(linkHrefRe, '$1');
+    if (!/^http/.test(carrierLink)) {
+      carrierLink = '';
+    } else {
+      carrier = carrierLink.replace(/.*fonefinder.net\/(.*).php/, '$1');
+      if (carrierLink === carrier) {
+        carrier = '';
+      }
+    }
     type = cols[5] || '';
 
-    arr.push([area, prefix, city, state, st, comment, type]);
+    if (/fonefinder/.test(carrierLink)) {
+      carrierLink = '';
+    }
+    arr.push([area, prefix, city, state, st, company, type, carrierLink, carrier]);
   });
 
   return arr;
 }
-
-/*
-fs.readFile(process.argv[2], 'utf8', function (err, text) {
-  var arr = scrape(text)
-    , map = {}
-    ;
-
-  if (!arr) {
-    console.log(process.argv[2], 'is bunk');
-    return;
-  }
-
-  arr.forEach(function (cols) {
-    map[cols[5]] = map[cols[5]] || 0;
-    map[cols[5]] += 1; 
-  });
-
-  console.log(map);
-});
-*/
 
 module.exports.scrape = scrape;
