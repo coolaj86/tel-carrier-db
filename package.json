@@ -1,6 +1,6 @@
 {
-  "name": "fonefinder-downloader",
-  "version": "1.0.0",
+  "name": "fonefinder-to-json",
+  "version": "0.9.0",
   "description": "Downloads the nxx database from fonefinder.net",
   "main": "download.js",
   "scripts": {
