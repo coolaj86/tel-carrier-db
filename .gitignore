@@ -1,5 +1,6 @@
 data/
 numbers.txt
+sheet.json
 
 lib-cov
 *.seed
