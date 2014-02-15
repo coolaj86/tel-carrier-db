@@ -116,19 +116,18 @@
       }
 
       forEachAsync(code, function (n, row) {
-        // HERE
-        if (linkOverrides[row[8]]) {
-          row[7] = linkOverrides[row[8]];
-          bigData.push(row);
-          n();
-          return;
-        }
-        if (carrierOverrides[row[8]]) {
-          row[8] = carrierOverrides[row[8]];
-        }
         getRealCarrierName(row[7], function (obj) {
           row[7] = obj.link; // overwrite psuedolink
           row[9] = obj.name; // add yet another carrier / company name
+
+          if (linkOverrides[row[8]]) {
+            row[7] = linkOverrides[row[8]];
+          }
+
+          if (carrierOverrides[row[8]]) {
+            row[8] = carrierOverrides[row[8]];
+          }
+
           bigData.push(row);
           n();
         });
