@@ -1,6 +1,6 @@
 {
   "name": "tel-carrier-db",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Provides a local copy of the NANP NXX database from fonefinder.net",
   "main": "tel-carrier-db.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
   "license": "Apache2",
-  "dependencies": {
+  "devDependencies": {
     "foreachasync": "~3.0.0",
     "request": "~2.33.0"
   }

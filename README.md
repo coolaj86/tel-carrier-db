@@ -58,7 +58,7 @@ Here's the process:
 ```bash
 git clone git@github.com:coolaj86/nxx-lookup.git
 pushd nxx-lookup
-npm install
+npm install --dev
 ```
 ### \#2 Download the database
 
