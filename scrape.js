@@ -43,16 +43,18 @@ function scrape(html) {
     if (!/^http/.test(carrierLink)) {
       carrierLink = '';
     } else {
+      // the link is incomplete
+      if ("http://fonefinder.net" === carrierLink) {
+        carrierLink = '';
+      }
+
       carrier = carrierLink.replace(/.*fonefinder.net\/(.*).php/, '$1');
+      // there is no link
       if (carrierLink === carrier) {
         carrier = '';
       }
     }
     type = cols[5] || '';
-
-    if (/fonefinder/.test(carrierLink)) {
-      carrierLink = '';
-    }
     arr.push([area, prefix, city, state, st, company, type, carrierLink, carrier]);
   });
 
