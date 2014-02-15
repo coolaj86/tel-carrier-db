@@ -1,5 +1,7 @@
 # tel-carrier-db
 
+A static cache of <http://fonefinder.net>'s database, adapted for use with Node.js.
+
 ## Usage
 
 ```bash
@@ -21,20 +23,22 @@ npm install --save tel-carrier-db
   } else {
     console.log('Not found');
   }
-
-  /*
-  { number: '+18013605555'
-  , city: 'PROVO'
-  , state: 'Utah'
-  , st: 'UT'
-  , company: 'CELLCO PARTNERSHIP DBA VERIZON WIRELESS - UT'
-  , type: 'WIRELESS PROV'
-  , carrier: 'verizon'
-  , link: 'http://www.verizonwireless.com'
-  , wireless: true
-  }
-  */
 }());
+```
+
+Example Output:
+
+```json
+{ "number": "+18013605555"
+, "city": "PROVO"
+, "state": "Utah"
+, "st": "UT"
+, "company": "CELLCO PARTNERSHIP DBA VERIZON WIRELESS - UT"
+, "type": "WIRELESS PROV"
+, "carrier": "verizon"
+, "link": "http://www.verizonwireless.com"
+, "wireless": true
+}
 ```
 
 Note that the `country` parameter is ignored.
@@ -89,29 +93,13 @@ That file is an object that looks like this:
 The array inside of `list` is in the following format:
 
 ```json
-["area code", "prefix", "city", "state", "st", "comment", "type"]
+{ "area code": [ ["prefix", "city", "state", "st", "comment", "type"] ] }
 ```
 
-Note that the ids used for city, state, st, comment, and type are transient
-and you must not rely on them.
-They're just for the sake of poor-man's compression.
-
-### Carrier Mapping
-
-There are nearly 4,500 unique carrier names, however,
-that can easily trim down to around 3,000 once the
-obvious duplicates are removed.
-
-For example, "Verizon" is listed under 75 slightly different business names.
-
-After that there are hundreds of mergers to be accounted for.
-
-For example, all nxx blocks registered to "Cingular" now belong to "AT&T".
-However, I can't yet say with confidence that all blocks from one failed / merged
-company are transferred to the same new company.
-
-As time goes on and the carrier mappings become more accurate I'll add a new column
-for current carrier.
+Note that what may appear to be numeric ids used
+for city, state, st, comment, and type are actually **transient**
+and you **must not** rely on them -
+they're just for the sake of poor-man's compression.
 
 ### Porting
 
