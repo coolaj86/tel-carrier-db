@@ -1,8 +1,6 @@
 'use strict';
 
 var data = require('./data.json')
-  , fs = require('fs')
-  , tried = {}
   ;
 
 function lookup(country, area, pre, ex) {
@@ -11,7 +9,7 @@ function lookup(country, area, pre, ex) {
 
   pre = parseInt(pre, 10);
   if (!data.list[area]) {
-    console.log('area', area);
+    //console.log('bad area code', area);
     return null;
   }
   data.list[area].some(function (d) {
@@ -23,7 +21,7 @@ function lookup(country, area, pre, ex) {
       , city: data.cities[d[1]]
       , state: data.states[d[2]]
       , st: data.sts[d[3]]
-      , company: data.comments[d[4]]
+      , company: data.companies[d[4]]
       , type: data.types[d[5]]
       , carrier: data.carriers[d[7]]
       , link: data.links[d[6]]

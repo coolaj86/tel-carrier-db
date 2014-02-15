@@ -16,7 +16,6 @@ function scrape(html) {
   rows.shift(); // TABLE open + header
   rows.pop(); // TABLE close
 
-  //console.log(rows.join('\n\n'));
   rows.forEach(function (row) {
     var cols = row.split(/<TD>/ig)
       , linkHrefRe = /<A.*?HREF='([^']*)'.*/
@@ -34,7 +33,6 @@ function scrape(html) {
 
     cols.shift();
     // <A HREF='findareacode.php?areacode=972'>972</A>[ ]<A HREF='findome.php?npa=&nxx=360&usaquerytype=Search+by+Number'>360[  ]<A HREF='findcity.php?cityname=DALLAS&state=TX'>DALLAS[  ]<A HREF='shownpamap.php?graphic=http://fonefinder.net/images/npamap/tx.gif'>Texas</A>[ ]<A HREF='http://fonefinder.net/att.php'>AT&T LOCAL</A>[  ]CLEC[  ]<A HREF='findome.php?npa=972&nxx=360&usaquerytype=Search+by+Number'>More</A>
-    //console.log(cols.join('[\t]'), '\n');
     area = cols[0].replace(linkTitleRe, '$1');
     prefix = cols[1].replace(linkTitleRe, '$1');
     city = cols[2].replace(linkTitleRe, '$1');

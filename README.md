@@ -69,12 +69,20 @@ When the download completes it will write out about 5MiB of tables into `data.js
 That file is an object that looks like this:
 
 ```json
-{ list: [ [801,360,1531,39,39,908,4], ... ]
+{ list: {
+    "801": [
+      [360,1531,39,39,908,4]
+    , ...
+    ]
+  , ...
+  }
 , cities: [ "DALLAS", ... ]
 , states: [ "Texas", ...]
 , sts: [ "TX", ... ]
-, comments: [ "CELLCO PARTNERSHIP DBA VERIZON WIRELESS - TX", ... ]
+, companies: [ "CELLCO PARTNERSHIP DBA VERIZON WIRELESS - TX", ... ]
 , types: [ "WIRELESS PROV", ... ]
+, carriers: [ "verizon", ... ]
+, links: [ "http://www.verizonwireless.com", ... ]
 }
 ```
 

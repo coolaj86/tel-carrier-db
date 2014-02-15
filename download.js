@@ -14,7 +14,7 @@
     , cities = { map: {}, arr: [] }
     , states = { map: {}, arr: [] }
     , sts = { map: {}, arr: [] }
-    , comments = { map: {}, arr: [] }
+    , companies = { map: {}, arr: [] }
     , links = { map: {}, arr: [] }
     , carriers = { map: {}, arr: [] }
     , types = { map: {}, arr: [] }
@@ -121,7 +121,7 @@
         d[1] = addThing(d[1], cities); // city name
         d[2] = addThing(d[2], states); // state name
         d[3] = addThing(d[3], sts); // state abbrev
-        d[4] = addThing(d[4], comments); // teclo registered
+        d[4] = addThing(d[4], companies); // teclo registered
         d[5] = addThing(d[5], types); // telco type
         d[6] = addThing(d[6], links); // carrier link
         d[7] = addThing(d[7], carriers); // carrier
@@ -150,7 +150,7 @@
       ws.write(',' + s + '"states":' + s + JSON.stringify(states.arr) + '\n');
       ws.write(',' + s + '"sts":' + s + JSON.stringify(sts.arr) + '\n');
       ws.write(',' + s + '"cities":' + s + JSON.stringify(cities.arr, null, s2) + '\n');
-      ws.write(',' + s + '"comments":' + s + JSON.stringify(comments.arr, null, s2) + '\n');
+      ws.write(',' + s + '"companies":' + s + JSON.stringify(companies.arr, null, s2) + '\n');
       ws.write(',' + s + '"links":' + s + JSON.stringify(links.arr, null, s2) + '\n');
       ws.write(',' + s + '"carriers":' + s + JSON.stringify(carriers.arr, null, s2) + '\n');
       ws.write('}\n', function () {
