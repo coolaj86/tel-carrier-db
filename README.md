@@ -36,6 +36,7 @@ Example Output:
 , "company": "CELLCO PARTNERSHIP DBA VERIZON WIRELESS - UT"
 , "type": "WIRELESS PROV"
 , "carrier": "verizon"
+, "carrierName": "Verizon"
 , "link": "http://www.verizonwireless.com"
 , "wireless": true
 }

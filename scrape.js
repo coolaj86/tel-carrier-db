@@ -29,6 +29,7 @@ function scrape(html) {
       , type
       , carrier
       , carrierLink
+      , carrierName2
       ;
 
     cols.shift();
@@ -54,8 +55,10 @@ function scrape(html) {
         carrier = '';
       }
     }
+    carrierName2 = ''; // placeholder
     type = cols[5] || '';
-    arr.push([area, prefix, city, state, st, company, type, carrierLink, carrier]);
+            //0,    1,      2,    3,     4,  5,       6,    7,           8,       9
+    arr.push([area, prefix, city, state, st, company, type, carrierLink, carrier, carrierName2]);
   });
 
   return arr;

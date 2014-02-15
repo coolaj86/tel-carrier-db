@@ -1,0 +1,287 @@
+[
+  {
+    "link": "http://www22.verizon.com/about",
+    "name": "360 Communications",
+    "carrier": "360comm"
+  },
+  {
+    "link": "http://www.telupton.qc.ca/",
+    "name": "La Compagne de Telephone",
+    "carrier": "Lacompagne"
+  },
+  {
+    "link": "http://www.acegroup.cc/",
+    "name": "Ace Communications Group",
+    "carrier": "acetelecom"
+  },
+  {
+    "link": "http://www.bellaliant.net/",
+    "name": "Bell Aliant",
+    "carrier": "aliant"
+  },
+  {
+    "link": "http://www.alltelwireless.com/",
+    "name": "Alltel Wireless",
+    "carrier": "alltel"
+  },
+  {
+    "link": "http://www.americanmessaging.net/",
+    "name": "American Messaging",
+    "carrier": "americanmessaging"
+  },
+  {
+    "link": "",
+    "name": "AT&T",
+    "carrier": "att"
+  },
+  {
+    "link": "http://www.bandwidth.com/",
+    "name": "Bandwidth.com",
+    "carrier": "bandwidth"
+  },
+  {
+    "link": "http://www.bell.ca/",
+    "name": "Bell Canada",
+    "carrier": "bellca"
+  },
+  {
+    "link": "http://www.tkqlhce.com/kn105qgpmgo35C5794B35554459D",
+    "name": "Boost Mobile",
+    "carrier": "boostmobile"
+  },
+  {
+    "link": "http://www.broadvoxclec.com/",
+    "name": "BroadVox Clec",
+    "carrier": "broadvoxclec"
+  },
+  {
+    "link": "http://brktel.on.ca",
+    "name": "Brook Telecom",
+    "carrier": "brook"
+  },
+  {
+    "link": "http://www.brucetelecom.com/",
+    "name": "Bruce Telecom",
+    "carrier": "brucetelecom"
+  },
+  {
+    "link": "http://www.cavtel.com/",
+    "name": "Cavalier Telephone LLC",
+    "carrier": "cavtel"
+  },
+  {
+    "link": "http://www.centurylink.com",
+    "name": "CenturyLink",
+    "carrier": "centurylink"
+  },
+  {
+    "link": "http://www.onecommunications.com/",
+    "name": "Earthlink Business Communications",
+    "carrier": "choiceone"
+  },
+  {
+    "link": "http://www.cincinnatibell.com/residential/ target=",
+    "name": "Cincinnati Bell",
+    "carrier": "cincinnatibell"
+  },
+  {
+    "link": "http://www.comcast.com",
+    "name": "Comcast",
+    "carrier": "comcast"
+  },
+  {
+    "link": "http://ww2.cox.com/aboutus/home.cox?campcode=gn_a_z_z",
+    "name": "Cox Communications",
+    "carrier": "cox"
+  },
+  {
+    "link": "http://www.mycricket.com/",
+    "name": "Cricket Communications",
+    "carrier": "cricket"
+  },
+  {
+    "link": "http://www.distributel.ca",
+    "name": "Distributel",
+    "carrier": "distributel"
+  },
+  {
+    "link": "http://www.dmts.biz/",
+    "name": "Dryden / DMTS / Bell Alliant",
+    "carrier": "dryden"
+  },
+  {
+    "link": "http://www.eastlink.ca",
+    "name": "Eastlink",
+    "carrier": "eastlink"
+  },
+  {
+    "link": "http://www.execulink.ca/",
+    "name": "Execulink Telecom",
+    "carrier": "execulink"
+  },
+  {
+    "link": "http://www.frontier.com/",
+    "name": "Frontier Communications",
+    "carrier": "frontier"
+  },
+  {
+    "link": "http://globalive.ca/",
+    "name": "Global Wireless Management",
+    "carrier": "globallive"
+  },
+  {
+    "link": "http://www.level3.com/",
+    "name": "Level3 Communications",
+    "carrier": "level3"
+  },
+  {
+    "link": "http://www.metropcs.com",
+    "name": "MetroPCS",
+    "carrier": "metropcs"
+  },
+  {
+    "link": "http://www.usamobility.com/",
+    "name": "USAMobility",
+    "carrier": "mobility"
+  },
+  {
+    "link": "http://mpowercom.com/",
+    "name": "MPower Communications",
+    "carrier": "mpowercom"
+  },
+  {
+    "link": "http://www.mts.ca/mts/personal",
+    "name": "Manitoba Telephone Systems (MTS)",
+    "carrier": "mts"
+  },
+  {
+    "link": "http://www.inteliquent.com/",
+    "name": "Inteliquent",
+    "carrier": "neutraltandem"
+  },
+  {
+    "link": "http://www.nexicom.net/",
+    "name": "Nexicom",
+    "carrier": "nexicom"
+  },
+  {
+    "link": "http://www.o1.com/",
+    "name": "O1 Communications",
+    "carrier": "o1"
+  },
+  {
+    "link": "http://www.pacwest.com",
+    "name": "PacWest-Telecom",
+    "carrier": "pacwest"
+  },
+  {
+    "link": "http://www.paetec.com/",
+    "name": "Windstream",
+    "carrier": "paetec"
+  },
+  {
+    "link": "http://www.datavo.com/pcs1/",
+    "name": "Pacific Centrex Services - Datavo",
+    "carrier": "pcs1datavo"
+  },
+  {
+    "link": "http://www.quadro.net",
+    "name": "Quadro Communications",
+    "carrier": "quadro"
+  },
+  {
+    "link": "http://www.qwest.com/corporate/customerService/contactus/",
+    "name": "QWEST",
+    "carrier": "qwest"
+  },
+  {
+    "link": "https://store.verizonwireless.com/store/qwest_nse",
+    "name": "Qwest Wireless",
+    "carrier": "qwestwireless"
+  },
+  {
+    "link": "http://www.rnkcom.com/",
+    "name": "RNK, Inc.",
+    "carrier": "rnk"
+  },
+  {
+    "link": "http://www.rogers.com",
+    "name": "Rogers Communications",
+    "carrier": "rogers"
+  },
+  {
+    "link": "http://www.sasktel.com/",
+    "name": "Saskatchewan Telecommunications Holding Corporation (SaskTel)",
+    "carrier": "sasktel"
+  },
+  {
+    "link": "",
+    "name": "Sprint",
+    "carrier": "sprint"
+  },
+  {
+    "link": "http://www.tbaytel.net/",
+    "name": "Tbaytel",
+    "carrier": "tbaytel"
+  },
+  {
+    "link": "http://home.mytelus.com/telusen/portal/index.aspx",
+    "name": "Telus",
+    "carrier": "telus"
+  },
+  {
+    "link": "http://www.t-mobile.com/",
+    "name": "T-Mobile",
+    "carrier": "tmobile"
+  },
+  {
+    "link": "http://www.twtelecom.com/",
+    "name": "TW Telecom",
+    "carrier": "twtelecom"
+  },
+  {
+    "link": "http://www.uscellular.com/uscellular/",
+    "name": "US Cellular",
+    "carrier": "uscellular"
+  },
+  {
+    "link": "",
+    "name": "Verizon",
+    "carrier": "verizon"
+  },
+  {
+    "link": "http://www.vtx1.net/",
+    "name": "Valley Telephone Cooperative - Company",
+    "carrier": "vtx1"
+  },
+  {
+    "link": "https://wtccommunications.ca/",
+    "name": "Westport WTC Communications",
+    "carrier": "westport"
+  },
+  {
+    "link": "http://www.windstreambusiness.com/",
+    "name": "Windstream",
+    "carrier": "windstream"
+  },
+  {
+    "link": "http://www.corporationwiki.com/Michigan/Detroit/gvc-networks-llc/56236905.aspx",
+    "name": "GVC Newtworks, LLC",
+    "carrier": "winstar"
+  },
+  {
+    "link": "http://www.xo.com/about",
+    "name": "XO Communications",
+    "carrier": "xo"
+  },
+  {
+    "link": "http://www.yak.ca/",
+    "name": "Yak Communications",
+    "carrier": "yakca"
+  },
+  {
+    "link": "http://www.zayo.com/",
+    "name": "Zayo Group",
+    "carrier": "zayo"
+  }
+]

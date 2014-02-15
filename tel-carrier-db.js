@@ -1,6 +1,7 @@
 'use strict';
 
 var data = require('./data.json')
+  , meta = require('./meta.json')
   ;
 
 function lookup(country, area, pre, ex) {
@@ -18,14 +19,15 @@ function lookup(country, area, pre, ex) {
     if (d[0] === pre) {
       thing = {
         number: '+1' + area.toString() + pre + ex
-      , city: data.cities[d[1]]
-      , state: data.states[d[2]]
-      , st: data.sts[d[3]]
-      , company: data.companies[d[4]]
-      , type: data.types[d[5]]
-      , carrier: data.carriers[d[7]]
-      , link: data.links[d[6]]
-      , wireless: /wireless|pcs/i.test(data.types[d[5]]) || /wireless|pcs/i.test(data.companies[d[4]]) || undefined
+      , city: meta.cities[d[1]]
+      , state: meta.states[d[2]]
+      , st: meta.sts[d[3]]
+      , company: meta.companies[d[4]]
+      , type: meta.types[d[5]]
+      , carrier: meta.carriers[d[7]]
+      , carrierName: meta.carrierNames[d[8]] || d[8]
+      , link: meta.links[d[6]]
+      , wireless: /wireless|pcs/i.test(meta.types[d[5]]) || /wireless|pcs/i.test(meta.companies[d[4]]) || undefined
       };
       return true;
     }
