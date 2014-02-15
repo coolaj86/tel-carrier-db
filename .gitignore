@@ -1,4 +1,5 @@
 data/
+numbers.txt
 
 lib-cov
 *.seed
