@@ -19,7 +19,7 @@ function scrape(html) {
   rows.forEach(function (row) {
     var cols = row.split(/<TD>/ig)
       , linkHrefRe = /<A.*?HREF='([^']*)'.*/
-      , linkTitleRe = /<A[^>]*>([^<]+)(<\/A>)?/
+      , linkTitleRe = /<A[^>]*>([^<]*)(<\/A>)?/
       , area
       , prefix
       , city
