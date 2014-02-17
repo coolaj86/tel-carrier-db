@@ -25,7 +25,7 @@ function lookup(country, area, pre, ex) {
       , company: meta.companies[d[4]]
       , type: meta.types[d[5]]
       , carrier: meta.carriers[d[7]]
-      , carrierName: meta.carrierNames[d[8]] || d[8]
+      , carrierName: meta.carrierNames[d[8]] || ''
       , link: meta.links[d[6]]
       , wireless: /wireless|pcs/i.test(meta.types[d[5]]) || /wireless|pcs/i.test(meta.companies[d[4]]) || undefined
       };

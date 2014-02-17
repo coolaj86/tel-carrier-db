@@ -20,6 +20,15 @@ var fs = require('fs')
 
 // NOTE these are not ideas, they will change with each update
 function addThing(str, t) {
+  // match www. and no www.
+  if (!str || 'number' === typeof t.map[str]) {
+    str = str;
+  } else if ('number' === typeof t.map[str.replace(/\/\/www\./, '//')]) {
+    str = str.replace(/\/www\./, '/');
+  } else if ('number' === typeof t.map[str.replace(/\/\//, '//www.')]) {
+    str = str.replace(/\/\//, '//www.');
+  }
+
   // account for falsey 0
   if ('number' !== typeof t.map[str]) {
     t.map[str] = t.arr.length;
@@ -113,9 +122,9 @@ function writeDataFile(mapData) {
     });
 
     mWs.write('{\n');
-    mWs.write(     s2 + '"types":' + s + JSON.stringify(types.arr) + '\n');
-    mWs.write(',' + s + '"states":' + s + JSON.stringify(states.arr) + '\n');
-    mWs.write(',' + s + '"sts":' + s + JSON.stringify(sts.arr) + '\n');
+    mWs.write(     s2 + '"types":' + s + JSON.stringify(types.arr, null, s2) + '\n');
+    mWs.write(',' + s + '"states":' + s + JSON.stringify(states.arr, null, s2) + '\n');
+    mWs.write(',' + s + '"sts":' + s + JSON.stringify(sts.arr, null, s2) + '\n');
     mWs.write(',' + s + '"cities":' + s + JSON.stringify(cities.arr, null, s2) + '\n');
     mWs.write(',' + s + '"companies":' + s + JSON.stringify(companies.arr, null, s2) + '\n');
     mWs.write(',' + s + '"links":' + s + JSON.stringify(links.arr, null, s2) + '\n');
