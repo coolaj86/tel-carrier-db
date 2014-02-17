@@ -171,7 +171,8 @@
       nxxs.push(pad(i));
     }
 
-    randomNxxs = nxxs.slice(0).sort(function () { return 0.5 - Math.random(); });
+    //randomNxxs = nxxs.slice(0).sort(function () { return 0.5 - Math.random(); });
+    randomNxxs = nxxs.slice(0);
 
     if (!fs.existsSync('sheet.json')) {
       forEachAsync(randomNxxs, downloadData).then(saveData);
